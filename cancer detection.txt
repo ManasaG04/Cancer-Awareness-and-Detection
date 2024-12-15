@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Awareness and Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGdhbGF4eXxlbnwwfHx8fDE2NDgxODIxMzA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed; 
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .banner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to right, #001f3f, #003366, #004080); /* Navy Blue Gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .banner h1 {
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        h2, h3 {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #f39c12;
+        }
+
+        h3 {
+            color: #2980b9;
+        }
+
+        #cancer-type {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .symptoms-list, .awareness-section, .treatment-section {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .symptoms-list ul, .awareness-section ul, .treatment-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            color: #333;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <h1>Cancer Awareness</h1>
+    </div>
+
+    <div class="container">
+        <h2>Select Cancer Type</h2>
+
+        <select id="cancer-type">
+            <option value="" disabled selected>Select a cancer type</option>
+            <option value="bone">Bone Cancer</option>
+            <option value="lung">Lung Cancer</option>
+            <option value="blood">Blood Cancer</option>
+            <option value="mouth">Mouth Cancer</option>
+            <option value="skin">Skin Cancer</option>
+            <option value="breast">Breast Cancer</option>
+            <option value="colon">Colon Cancer</option>
+        </select>
+
+        <div id="symptoms" class="symptoms-list">
+            <h2>Symptoms:</h2>
+            <ul id="symptoms-list"></ul>
+        </div>
+
+        <div id="treatment" class="treatment-section">
+            <h2>Treatment Options:</h2>
+            <ul id="treatment-list"></ul>
+        </div>
+
+        <div class="awareness-section">
+            <h2>Cancer Awareness</h2>
+            <h3>Understanding Cancer</h3>
+            <ul>
+                <li>Cancer occurs when cells grow uncontrollably, forming tumors or spreading through the blood.</li>
+                <li>There are over 100 types of cancer, with common ones including lung, breast, blood, and bone cancer.</li>
+                <li>Early detection through screenings and awareness can significantly improve treatment outcomes.</li>
+            </ul>
+
+            <h3>Prevention Tips</h3>
+            <ul>
+                <li>Maintain a healthy diet rich in fruits and vegetables.</li>
+                <li>Exercise regularly to keep your body active and immune system strong.</li>
+                <li>Avoid smoking and limit alcohol consumption.</li>
+                <li>Use sunscreen and protective clothing to prevent skin cancer.</li>
+                <li>Stay vaccinated against viruses like HPV and Hepatitis B that can lead to cancer.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const cancerData = {
+            "bone": {
+                symptoms: [
+                    "Pain in the bones or joints",
+                    "Swelling near the affected area",
+                    "Fractures or breaks in bones",
+                    "Fatigue",
+                    "Unexplained weight loss"
+                ],
+                treatment: [
+                    "Surgery to remove the tumor",
+                    "Radiation therapy to destroy cancer cells",
+                    "Chemotherapy for advanced stages"
+                ]
+            },
+            "lung": {
+                symptoms: [
+                    "Persistent cough",
+                    "Shortness of breath",
+                    "Chest pain",
+                    "Wheezing",
+                    "Coughing up blood"
+                ],
+                treatment: [
+                    "Surgical removal of affected lung parts",
+                    "Targeted therapy for specific mutations",
+                    "Immunotherapy to boost immune response"
+                ]
+            },
+            "blood": {
+                symptoms: [
+                    "Unexplained bruising or bleeding",
+                    "Frequent infections",
+                    "Fatigue",
+                    "Pale or sallow skin",
+                    "Fever"
+                ],
+                treatment: [
+                    "Chemotherapy to target blood cells",
+                    "Bone marrow or stem cell transplants",
+                    "Targeted drug therapy"
+                ]
+            },
+            "mouth": {
+                symptoms: [
+                    "Sores or ulcers in the mouth that don't heal",
+                    "Pain or tenderness in the mouth",
+                    "Difficulty swallowing or chewing",
+                    "Lump or thickening in the cheek or mouth"
+                ],
+                treatment: [
+                    "Surgical removal of tumors",
+                    "Radiation therapy for localized cancer",
+                    "Rehabilitation for speech and swallowing"
+                ]
+            },
+            "skin": {
+                symptoms: [
+                    "Changes in existing moles",
+                    "New, unusual skin growths",
+                    "Sores that don’t heal",
+                    "Itching or bleeding on the skin"
+                ],
+                treatment: [
+                    "Cryotherapy to freeze cancerous cells",
+                    "Surgical excision for removal",
+                    "Topical medications or immunotherapy"
+                ]
+            },
+            "breast": {
+                symptoms: [
+                    "Lump in the breast or underarm",
+                    "Change in the size or shape of the breast",
+                    "Redness or flaky skin in the breast area",
+                    "Nipple discharge other than breast milk"
+                ],
+                treatment: [
+                    "Mastectomy or lumpectomy surgery",
+                    "Hormonal therapy for hormone-sensitive cancer",
+                    "Radiation or chemotherapy for advanced stages"
+                ]
+            },
+            "colon": {
+                symptoms: [
+                    "Changes in bowel habits",
+                    "Blood in stool",
+                    "Persistent abdominal discomfort",
+                    "Unexplained weight loss or fatigue"
+                ],
+                treatment: [
+                    "Surgery to remove cancerous polyps",
+                    "Targeted drug therapy for specific genes",
+                    "Chemotherapy and radiation for larger tumors"
+                ]
+            }
+        };
+
+        const cancerSelect = document.getElementById("cancer-type");
+        const symptomsList = document.getElementById("symptoms-list");
+        const treatmentList = document.getElementById("treatment-list");
+
+        cancerSelect.addEventListener("change", function () {
+            const selectedCancer = cancerSelect.value;
+            if (selectedCancer) {
+                const { symptoms, treatment } = cancerData[selectedCancer];
+                symptomsList.innerHTML = symptoms.map(item => `<li>${item}</li>`).join('');
+                treatmentList.innerHTML = treatment.map(item => `<li>${item}</li>`).join('');
+            }
+        });
+    </script>
+
+</body>
+</html>
